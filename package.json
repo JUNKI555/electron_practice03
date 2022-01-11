@@ -6,10 +6,38 @@
   "author": "JUNKI555 <junki555@gmail.com>",
   "license": "WTFPL",
   "scripts": {
-    "start": "electron ."
+    "start": "electron .",
+    "build_mac": "electron-builder --mac --x64",
+    "build_win": "electron-builder --win --x64"
   },
   "devDependencies": {
     "electron": "^16.0.6",
     "electron-builder": "^22.14.5"
+  },
+  "build": {
+    "appId": "dev.cuesoft.app.electron",
+    "productName": "electron_app",
+    "directories": {
+      "output": "build"
+    },
+    "files": [
+      "index.js",
+      "package.json",
+      "yarn.lock"
+    ],
+    "mac": {
+      "icon": "resources/ovice_icon.icns",
+      "target": [
+        "dmg"
+      ]
+    },
+    "win": {
+      "icon": "resources/ovice_icon.ico",
+      "target": "nsis"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true
+    }
   }
 }
