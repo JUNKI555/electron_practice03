@@ -1,5 +1,5 @@
 # electron_practice03
-Electron 練習
+Electron 練習03
 
 ## info
 Google をラップしただけのアプリ。
